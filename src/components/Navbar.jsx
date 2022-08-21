@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 import { useContext } from 'react'
 
@@ -22,13 +22,30 @@ function Navbar() {
 
   }
 
+  const activesStyles = {
+    color: "pink",
+    textDecoration: "underline",
+    margin: "10px"
+  }
+
+  const inactiveStyles = {
+    color: "black",
+    textDecoration: "none",
+    margin: "10px"
+  }
+
+  const selecStyle = (navinfo) => navinfo.isActive === true ? activesStyles : inactiveStyles
+
   if ( isUserActive === true ) {
     return (
       <div>
-        <Link to="/">Inicio</Link>
-        <Link to="/profile">Perfil</Link>
-        
-         {/* <Link onClick={handleLogout} >Perfil</Link> */}
+        <NavLink style={selecStyle} to="/home">Inicio</NavLink>
+        <NavLink style={selecStyle} to="/profile">Perfil</NavLink>
+        <NavLink style={selecStyle}  to="/dog" end={true}>Ver Perritos</NavLink>
+        <NavLink style={selecStyle}  to="/dog/add-form"  >Crear perritos</NavLink>
+        <NavLink style={selecStyle} to="/event" end={true}>Ver eventos</NavLink>
+        <NavLink style={selecStyle}  to="/event/add-form" >Crear evento</NavLink>
+        {/* <Link onClick={handleLogout} >Perfil</Link> */}
         <button onClick={handleLogout}>Cerrar sesion</button>
         <p>{user.email}</p>
       </div>
@@ -36,9 +53,9 @@ function Navbar() {
   }else {
     return (
       <div>
-          <Link to="/">Inicio</Link>
-          <Link to="/signup">Registro</Link>
-          <Link to="/login">Iniciar sesion</Link>
+          <NavLink style={selecStyle} to="/home">Inicio</NavLink>
+          <NavLink style={selecStyle} to="/signup">Registro</NavLink>
+          <NavLink style={selecStyle} to="/login">Iniciar sesion</NavLink>
       </div>
     )
   }

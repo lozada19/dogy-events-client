@@ -47,7 +47,7 @@ function Login() {
              localStorage.setItem("authToken", authtoken) // asi se resive en la consola y se guarda
              
              authenticateUser()// envocamos la funcion que viene de context y contacta con el servicio de verify
-             
+
 
 
 
@@ -75,7 +75,7 @@ function Login() {
             <input type="text" name="email" value={email} onChange={handleEmailChange}/>
             <br />
             <label>Contraseña</label>
-            <input type="text" name="password" value={password} onChange={handlPasswordChange}/>
+            <input type="password" name="password" value={password} onChange={handlPasswordChange}/>
             <br /> 
             {errorMessage ?  <p>{errorMessage}</p> : null} 
             <br />
