@@ -13,27 +13,27 @@ function EvenDetails() {
   const [ isFetching, setIsFetching ] = useState(true)
 
   //estado controlado 
-  const [ allPet, setAllPet ] = useState(null)
+ // const [ allPet, setAllPet ] = useState(null)
 
   //FUNCIONES QUE ACTUALIZAN LOS ESTADOS 
-  const handleAllPet = (event) => {
-    setAllPet(event.target.value)
-  }
+  // const handleAllPet = (event) => {
+  //   setAllPet(event.target.value)
+  // }
 
-  const handleSignup = async (event) => {
-    event.preventDefault()
+  // const handleSignup = async (event) => {
+  //   event.preventDefault()
 
-    const newPet = {
-      pet: allPet,
-    }
+  //   const newPet = {
+  //     pet: allPet,
+  //   }
 
-    try {
-      await addMyDogServise(newPet)
-      //navigate("/event")
-    } catch (error) {
-      navigate("/error")
-    }
-  }
+  //   try {
+  //     await addMyDogServise(newPet)
+  //     //navigate("/event")
+  //   } catch (error) {
+  //     navigate("/error")
+  //   }
+  // }
 
   useEffect(() => {
     getDetailsEvent()
@@ -64,7 +64,7 @@ function EvenDetails() {
   }
   
   console.log("DETALLES EVENT", detailsEvent)
-  console.log("ALL PET", allPet)
+  //console.log("ALL PET", allPet)
   return (
     <div>
         <h1>detalles de los eventos </h1>
@@ -78,7 +78,7 @@ function EvenDetails() {
 
         
 
-        <form>
+        {/* <form>
         <label htmlFor="pet" >Mascota:</label>
         <select>
         {allPet.map((eachPet) => {
@@ -88,7 +88,7 @@ function EvenDetails() {
         </select>
         <button onClick={handleSignup}>Añadir</button>
         </form>
-        <br />
+        <br /> */}
 
         <button onClick={handleDelete}>Borrar</button>
         <Link to={`/event/${eventId}/edit`}><button>Editar</button></Link>

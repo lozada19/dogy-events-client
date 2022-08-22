@@ -36,6 +36,7 @@ function DogDetails() {
       
     }
   }
+  
 
   if (isFetching === true) {
     return <h3>... is Loading</h3>
@@ -49,8 +50,8 @@ function DogDetails() {
         <p>Fecha de nacimiento:{detailsDog.dateofBirth}</p>
         <p>Raza: {detailsDog.breed}</p>
         <p>Sobre mi: {detailsDog.aboutme}</p>
-        <p>imagen:{detailsDog.image}</p>
         <p>Dueño:{detailsDog.owner.username}</p>
+        <img src={detailsDog.image} alt="image" width={150}/>
 
         <button onClick={handleDelete}>Borrar</button>
         <Link to={`/dog/${dogId}/edit`}><button>Editar</button></Link>

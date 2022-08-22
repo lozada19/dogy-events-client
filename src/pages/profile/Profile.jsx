@@ -1,6 +1,6 @@
 import React from 'react'
-import MydDog from '../dog/MydDog'
-import MyEvent from '../event/MyEvent'
+import MydDog from '../../components/MydDog'
+import MyEvent from '../../components/MyEvent'
 
 function Profile() {
   return (

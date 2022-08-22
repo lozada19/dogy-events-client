@@ -2,6 +2,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { addDogService }  from "../../services/dog.services"
+import { uploadService } from "../../services/upload.services"
 
 function AddFormDog() {
 
@@ -12,7 +13,10 @@ function AddFormDog() {
     const [dateofBirth, setDateofBirth] = useState(null)
     const [breed, setBreed] = useState(null)
     const [aboutme, setAboutme] = useState(null)
-    const [image, setImage] = useState(null)
+   
+
+    //ESTDO PARA GUARDAR EL URL QUE VENDRA DE CLOUDINAYÇ
+    const [imageUrl, setImageUrl] = useState("")
 
     //FUNCIONES QUE ACTUALIZAN LOS ESTADOS 
     const handleNameDog = (event) => {
@@ -31,9 +35,7 @@ function AddFormDog() {
         setAboutme(event.target.value)
     }
 
-    const handleImage = (event) => {
-        setImage(event.target.value)
-    }
+  
 
     const handleSignup = async (event) => {
         event.preventDefault()
@@ -43,7 +45,7 @@ function AddFormDog() {
             dateofBirth: dateofBirth,
             breed: breed,
             aboutme: aboutme,
-            image: image
+            image: imageUrl
         }
 
         console.log(newDog)
@@ -54,6 +56,19 @@ function AddFormDog() {
         } catch (error) {
             console.log(error)
             navigate("/error")
+        }
+    }
+
+    const handleImgUpload = async (event) => {
+        console.log(event.target.files[0])
+        const form = new FormData()
+        form.append("image", event.target.files[0])
+        try {
+            const response = await uploadService(form)
+            setImageUrl(response.data.imageUrl)
+        } catch (error) {
+            navigate("/error")
+            
         }
     }
     
@@ -74,13 +89,14 @@ function AddFormDog() {
             <label htmlFor="aboutme">Sobre mi:</label>
             <input type="text" name="aboutme" onChange={handleAboutme} value={aboutme} />
             <br />
-            {/* PREGUNTAR POR LA IMAGEN  */}
-            <label htmlFor="image">Imagen:</label>
-            <input type="text" name="image" onChange={handleImage} value={image} /> 
-            <br />
             <button onClick={handleSignup}>Crear</button>
-
         </form>
+
+        <div>
+            <h5>Añade una foto de tu perro:</h5>
+            <input type="file" onChange={handleImgUpload} />
+            <img src={imageUrl} alt="image" width={80} />
+        </div>
     </div>
   )
 }

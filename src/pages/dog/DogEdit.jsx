@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+import { uploadService } from "../../services/upload.services"
+
 import {
   getDogDetailsService,
   updateDogService,
@@ -15,7 +17,7 @@ function DogEdit() {
   const [dateofBirth, setDateofBirth] = useState(null);
   const [breed, setBreed] = useState(null);
   const [aboutme, setAboutme] = useState(null);
-  const [image, setImage] = useState(null);
+  const [imageUrl, setImageUrl] = useState("") // imagen 
 
   //FUNCIONES QUE ACTUALIZAN LOS ESTADOS
   const handleNameDogChange = (event) => {
@@ -37,9 +39,10 @@ function DogEdit() {
     setAboutme(event.target.value);
   };
 
-  const handleImageChange = (event) => {
-    setImage(event.target.value);
-  };
+  const handleImagechange = (event) => {
+    setImageUrl(event.target.files[0]) //imagen 
+  }
+
 
   useEffect(() => {
     getDetailsDog()
@@ -52,7 +55,7 @@ function DogEdit() {
       setDateofBirth(response.data.dateofBirth)
       setBreed(response.data.breed)
       setAboutme(response.data.aboutme)
-      setImage(response.data.image)
+      setImageUrl(response.data.imageUrl) // imagen 
     } catch (error) {
       navigate("/error")
     }
@@ -66,7 +69,7 @@ function DogEdit() {
       dateofBirth: dateofBirth,
       breed: breed,
       aboutme: aboutme,
-      image: image
+      image: imageUrl // imagen
     }
 
     try {
@@ -77,6 +80,9 @@ function DogEdit() {
     }
 
   }
+
+  
+
 
   return (
     <div>
@@ -96,8 +102,8 @@ function DogEdit() {
             <input type="text" name="aboutme" value={aboutme} onChange={handleAboutmeChange}/>
             <br />
             {/* PREGUNTAR POR LA IMAGEN  */}
-            <label htmlFor="image">Imagen:</label>
-            <input type="text" name="image" value={image} onChange={handleImageChange}/> 
+            <input type="file" value={imageUrl} onChange={handleImagechange} />
+            <img src={imageUrl} alt="image" width={80} />
             <br />
             <button onClick={handleEdit}>Editar</button>
 

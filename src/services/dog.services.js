@@ -22,10 +22,15 @@ const updateDogService = (dogId, updateDog) => {
     return service.patch(`/dog/${dogId}`, updateDog)
 }
 
+const getMyDogServise = () => {
+    return service.get("/dog/myDog")
+}
+
 export {
     getDogService,
     getDogDetailsService,
     addDogService,
     deleteDogService,
-    updateDogService
+    updateDogService,
+    getMyDogServise
 }

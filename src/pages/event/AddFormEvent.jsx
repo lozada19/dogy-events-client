@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom"
 import { addEventService } from "../../services/event.services"
 
 
+
 function AddFormEvent() {
 
   const navigate = useNavigate()
@@ -14,6 +15,7 @@ function AddFormEvent() {
   const [ date, setDate ] = useState(null)
   const [ description, setDescription ] = useState(null)
   const [ address, setAddress ] = useState(null) 
+
 
    //FUNCIONES QUE ACTUALIZAN LOS ESTADOS 
   const handleEventName = (event) => {
