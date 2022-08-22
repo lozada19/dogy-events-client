@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import { getDogService } from "../../services/dog.services"
 
-function DogList() {
+function DogList(props) {
 
   const navigate = useNavigate()
 
@@ -20,6 +20,7 @@ function DogList() {
       const response = await getDogService()
       setAllDog(response.data)
       setIsFetching(false)
+      navigate("/dog")
      } catch (error) {
       navigate("/error")
      }

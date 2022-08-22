@@ -15,6 +15,7 @@ import Home from './pages/Home'
 import AddFormDog from './pages/dog/AddFormDog';
 import AddFormEvent from './pages/event/AddFormEvent';
 import MydDog from './pages/dog/MydDog';
+import MyEvent from './pages/event/MyEvent';
 
 
 function App() {
@@ -24,15 +25,19 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home/>}/>
         <Route path="/profile" element={<Profile/>}/>
+
         <Route path="/dog" element={<DogList/>}/>
         <Route path="/dog/myDog" element={<MydDog/>}/>
         <Route path="/dog/add-form" element={<AddFormDog/>}/>
         <Route path="/dog/:dogId/details" element={<DogDetails/>}/>
         <Route path="/dog/:dogId/edit" element={<DogEdit/>}/>
+
         <Route path="/event" element={<EventList/>}/>
-        <Route path="/dog/add-form" element={<AddFormEvent/>}/>
+        <Route path="/event/myDog" element={<MyEvent/>}/>
+        <Route path="/event/add-form" element={<AddFormEvent/>}/>
         <Route path="/event/:eventId/details" element={<EventDetails/>}/>
         <Route path="/event/:eventId/edit" element={<EveentEdit/>}/>
+
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/login" element={<Login/>}/>
       </Routes>

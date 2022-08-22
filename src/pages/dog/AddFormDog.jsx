@@ -3,7 +3,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { addDogService }  from "../../services/dog.services"
 
-function AddFormDog(props) {
+function AddFormDog() {
 
     const navigate = useNavigate()
 
@@ -50,7 +50,7 @@ function AddFormDog(props) {
 
         try {
             await addDogService(newDog)
-            props.getDog()
+            navigate("/dog")
         } catch (error) {
             console.log(error)
             navigate("/error")

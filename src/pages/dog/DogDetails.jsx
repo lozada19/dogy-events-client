@@ -19,7 +19,7 @@ function DogDetails() {
   const getDetailsDog = async () => {
     try {
       const response = await getDogDetailsService(dogId)
-      console.log("RESPONSE", response.data)
+      console.log("RESPONSE DOG", response.data)
       setDetailsDog(response.data)
       setIsFetching(false)
     } catch (error) {
@@ -41,7 +41,7 @@ function DogDetails() {
     return <h3>... is Loading</h3>
   }
 
- console.log("DETALLES", detailsDog)
+ console.log("DETALLES DOG", detailsDog)
   return (
     <div>
         <h1>ver detalles de los perritos</h1>
@@ -53,7 +53,7 @@ function DogDetails() {
         <p>Dueño:{detailsDog.owner.username}</p>
 
         <button onClick={handleDelete}>Borrar</button>
-        <Link to={`/dog/${dogId}/edit`}>Editar</Link>
+        <Link to={`/dog/${dogId}/edit`}><button>Editar</button></Link>
     </div>
   )
 }

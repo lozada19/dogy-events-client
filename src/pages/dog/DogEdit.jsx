@@ -22,10 +22,10 @@ function DogEdit() {
     setNameDog(event.target.value);
   };
 
-  console.log("get"+ dateofBirth)
+  console.log("",  dateofBirth)
 
   const handleDateofBirthChange = (event) => {
-    console.log("set"+ event.target.value)
+    console.log("", event.target.value)
     setDateofBirth(event.target.value);
   };
 
@@ -58,7 +58,8 @@ function DogEdit() {
     }
   }
 
-  const handleEdit = async () => {
+  const handleEdit = async (event) => {
+    event.preventDefault()
 
     const dogObj = {
       namedog: nameDog,
@@ -76,8 +77,6 @@ function DogEdit() {
     }
 
   }
-
-
 
   return (
     <div>
