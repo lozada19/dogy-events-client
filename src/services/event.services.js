@@ -20,10 +20,14 @@ const updateEventService = (eventId, updateEvent) => {
     return service.patch(`/event/${eventId}`, updateEvent)
 }
 
+const addMyDogServise = (eventId, dogId) => {
+    return service.patch(`/event/${eventId}/addPet`, dogId)
+}
 export {
     getEventService,
     getEventeDetailsService,
     addEventService,
     deleteEventSernvice,
-    updateEventService
+    updateEventService,
+    addMyDogServise
 }

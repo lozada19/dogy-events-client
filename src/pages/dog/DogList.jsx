@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import { getDogService } from "../../services/dog.services"
 
-function DogList(props) {
+function DogList() {
 
   const navigate = useNavigate()
 
