@@ -58,7 +58,7 @@ function AddFormDog() {
             navigate("/error")
         }
     }
-
+   // IMAGEN 
     const handleImgUpload = async (event) => {
         console.log(event.target.files[0])
         const form = new FormData()
@@ -90,6 +90,7 @@ function AddFormDog() {
             <input type="text" name="aboutme" onChange={handleAboutme} value={aboutme} />
             <br />
             <button onClick={handleSignup}>Crear</button>
+            <br />
 
             <div>
               <h5>Añade una foto de tu perro:</h5>
