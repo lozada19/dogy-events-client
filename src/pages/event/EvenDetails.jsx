@@ -8,7 +8,7 @@ import { getMyDogServise } from "../../services/dog.services"
 function EvenDetails() {
 
   const navigate = useNavigate()
-  const { eventId,} = useParams()
+  const { eventId } = useParams()
   
   //ESTADOS
   const [ detailsEvent, setDetailsEvent ] = useState(null)
@@ -16,6 +16,7 @@ function EvenDetails() {
 
   //estado controlado 
   const [ myDog, setMyDog ] = useState(null)
+  const [ choosenDog, setChoosenDog ] = useState(null)
 
   //FUNCIONES QUE ACTUALIZAN LOS ESTADOS 
 
@@ -23,7 +24,7 @@ function EvenDetails() {
     getDetailsEvent()
     getMydog() // estado controlado 
   }, [])
-//parte del formulario 
+  //parte del formulario 
    const getMydog = async () => {
    try {
      const response = await getMyDogServise()
@@ -57,19 +58,23 @@ function EvenDetails() {
 // parte del formulario
 
   const handleMyDog = (event) => {
-    console.log(event.target.value)
-    setMyDog(event.target.value)
+    console.log("HANDLEMYDOG",event.target.value)
+    setChoosenDog(event.target.value)
   }
 
-  const handleSignup = async (event) => {
+  const addMyDog = async (event) => {
     event.preventDefault()
     
     const newPet ={
-      pet: myDog
+      pet: choosenDog
     }
 
     try {
-      await addMyDogServise(newPet)
+      console.log("perrito añadido",choosenDog)
+      console.log(eventId)
+
+      await addMyDogServise(eventId, choosenDog)
+      
        //navigate("/event")
     } catch (error) {
        navigate("/error")
@@ -82,6 +87,7 @@ function EvenDetails() {
   
   console.log("DETALLES EVENT", detailsEvent) 
   console.log("MYDOG", myDog) // mis perritos
+  console.log()
 
   return (
     <div>
@@ -92,25 +98,38 @@ function EvenDetails() {
         <p>Descripcion:{detailsEvent.description}</p>
         <p>Direccion:{detailsEvent.address}</p>
         <p>Creador:{detailsEvent.owner.username}</p>
+
         <br />
         <button onClick={handleDelete}>Borrar</button>
         <Link to={`/event/${eventId}/edit`}><button>Editar</button></Link>
-         
+        <br />
 
-        <form onSubmit={handleSignup}> 
+        <form onSubmit={addMyDog}> 
               <label htmlFor="myDog">Mascota</label>
-              <select name="myDog" >
+              <select name="myDog" onChange={handleMyDog}>
                 {myDog.map((eachDog)=>{
                   return(
                     <option value={eachDog._id}>{eachDog.namedog}</option>
+                    
                   )
-
                 })}
-                
               </select>
               <button type='submit'>Añadir</button>
         </form>
-   
+
+        <h3> perritos apuntados</h3>
+        {detailsEvent.pet.map((eachDog) => {
+          return (
+            <li key={eachDog._id}>{eachDog.namedog}</li>
+          )
+        })}
+        
+
+        
+
+        
+
+    
 
     </div>
   )

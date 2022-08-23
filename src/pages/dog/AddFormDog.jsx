@@ -90,13 +90,15 @@ function AddFormDog() {
             <input type="text" name="aboutme" onChange={handleAboutme} value={aboutme} />
             <br />
             <button onClick={handleSignup}>Crear</button>
+
+            <div>
+              <h5>Añade una foto de tu perro:</h5>
+              <input type="file" onChange={handleImgUpload} />
+              <img src={imageUrl} alt="image" width={80} />
+            </div>
         </form>
 
-        <div>
-            <h5>Añade una foto de tu perro:</h5>
-            <input type="file" onChange={handleImgUpload} />
-            <img src={imageUrl} alt="image" width={80} />
-        </div>
+       
     </div>
   )
 }

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 
 //servicios
 import { addEventService } from "../../services/event.services"
+import { uploadService } from "../../services/upload.services"
 
 
 
@@ -15,6 +16,9 @@ function AddFormEvent() {
   const [ date, setDate ] = useState(null)
   const [ description, setDescription ] = useState(null)
   const [ address, setAddress ] = useState(null) 
+
+   //ESTDO PARA GUARDAR EL URL QUE VENDRA DE CLOUDINAYÇ
+   const [imageUrl, setImageUrl] = useState("")
 
 
    //FUNCIONES QUE ACTUALIZAN LOS ESTADOS 
@@ -41,7 +45,8 @@ function AddFormEvent() {
       eventname: eventname,
       date: date,
       description: description,
-      address: address
+      address: address,
+      image: imageUrl
     }
 
     try {
@@ -51,6 +56,19 @@ function AddFormEvent() {
       navigate("/error")
     }
   }
+
+  const handleImgUpload = async (event) => {
+    console.log(event.target.files[0])
+    const form = new FormData()
+    form.append("image", event.target.files[0])
+    try {
+        const response = await uploadService(form)
+        setImageUrl(response.data.imageUrl)
+    } catch (error) {
+        navigate("/error")
+        
+    }
+}
 
 
    
@@ -73,6 +91,12 @@ function AddFormEvent() {
           ></textarea> 
           <br />
           <button onClick={handleSignup}>Crear</button>
+
+          <div>
+            <h5>Añade una foto del evento:</h5>
+            <input type="file" onChange={handleImgUpload} />
+            <img src={imageUrl} alt="image" width={80} />
+          </div>
           
 
         </form>
