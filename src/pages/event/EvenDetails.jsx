@@ -21,18 +21,18 @@ function EvenDetails() {
 
   useEffect(() => {
     getDetailsEvent()
-    //$getMydog() // estado controlado 
+    getMydog() // estado controlado 
   }, [])
 //parte del formulario 
-  // const getMydog = async () => {
-  //   try {
-  //     const response = await getMyDogServise()
-  //     console.log("GETMYDOG",response.data) // los perritos de una persona
-  //     setMyDog(response.data)
-  //   } catch (error) {
+   const getMydog = async () => {
+   try {
+     const response = await getMyDogServise()
+     console.log("GETMYDOG",response.data) // los perritos de una persona
+      setMyDog(response.data)
+    } catch (error) {
       
-  //   }
-  // }
+    }
+  }
 
   const getDetailsEvent = async () => {
     try {
@@ -110,23 +110,6 @@ function EvenDetails() {
               </select>
               <button type='submit'>Añadir</button>
         </form>
-
-        
-
-        
-
-         {/* <form>
-        <label htmlFor="pet" >Mascota:</label>
-        <select>
-        {allPet.map((eachPet) => {
-          return <li key={eachPet._id}>{eachPet.pet}</li>
-        })}
-          <option value="allPet" onChange={handleAllPet}></option>
-        </select>
-        <button onClick={handleSignup}>Añadir</button>
-        </form>
-        <br /> */}
-
    
 
     </div>
