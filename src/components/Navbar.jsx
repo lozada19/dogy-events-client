@@ -23,22 +23,22 @@ function Navbar() {
   }
 
   const activesStyles = {
-    color: "pink",
+    color: "black",
     textDecoration: "underline",
-    margin: "10px"
+    // margin: "10px"
   }
 
   const inactiveStyles = {
     color: "black",
     textDecoration: "none",
-    margin: "10px"
+    //margin: "10px"
   }
 
   const selecStyle = (navinfo) => navinfo.isActive === true ? activesStyles : inactiveStyles
 
   if ( isUserActive === true ) {
     return (
-      <div>
+      <div className='nav-bar'>
         <NavLink style={selecStyle} to="/">Inicio</NavLink>
         <NavLink style={selecStyle} to="/profile">Perfil</NavLink>
 
@@ -49,12 +49,12 @@ function Navbar() {
         <NavLink style={selecStyle}  to="/event/add-form" >Crear evento</NavLink>
         {/* <Link onClick={handleLogout} >Perfil</Link> */}
         <button onClick={handleLogout}>Cerrar sesion</button>
-        <p>{user.email}</p>
+        {/* <p>{user.email}</p>  */}
       </div>
     )
   }else {
     return (
-      <div>
+      <div className='nav-bar'>
           <NavLink style={selecStyle} to="/">Inicio</NavLink>
           <NavLink style={selecStyle} to="/signup">Registro</NavLink>
           <NavLink style={selecStyle} to="/login">Iniciar sesion</NavLink>
