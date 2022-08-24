@@ -87,7 +87,7 @@ function AddFormDog() {
             <input type="text" name="breed" onChange={handleBreed} value={breed} />
             <br />
             <label htmlFor="aboutme">Sobre mi:</label>
-            <input type="text" name="aboutme" onChange={handleAboutme} value={aboutme} />
+            <textarea type="text" name="aboutme" onChange={handleAboutme} value={aboutme}></textarea> 
             <br />
             <button onClick={handleSignup}>Crear</button>
             <br />

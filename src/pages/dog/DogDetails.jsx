@@ -2,12 +2,16 @@ import {useEffect, useState} from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import { deleteDogService, getDogDetailsService } from "../../services/dog.services"
+import { useContext } from 'react'
+import { AuthContext } from '../../context/auth.context'
 
 
 function DogDetails() {
 
   const navigate = useNavigate()
   const { dogId } = useParams()
+
+  const { user } = useContext(AuthContext)
   
   const [ detailsDog, setDetailsDog ] = useState(null)
   const [ isFetching, setIsFetching ] = useState(true)
@@ -37,7 +41,7 @@ function DogDetails() {
     }
   }
   
-
+ 
   if (isFetching === true) {
     return <h3>... is Loading</h3>
   }
@@ -53,8 +57,8 @@ function DogDetails() {
         <p>Dueño:{detailsDog.owner.username}</p>
         <img src={detailsDog.image} alt="image" width={150}/>
 
-        <button onClick={handleDelete}>Borrar</button>
-        <Link to={`/dog/${dogId}/edit`}><button>Editar</button></Link>
+        {user._id == detailsDog.owner._id ? <button onClick={handleDelete} >Borrar</button> : null}
+        {user._id == detailsDog.owner._id ? <Link to={`/dog/${dogId}/edit`}><button>Editar</button></Link> : null}
     </div>
   )
 }

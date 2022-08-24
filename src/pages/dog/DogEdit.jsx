@@ -94,7 +94,7 @@ function DogEdit() {
 
   return (
     <div>
-      <h1>editar perritos</h1>
+      <h1>Editar perritos</h1>
 
       <form>
         <label htmlFor="nameDog">Nombre:</label>
@@ -122,12 +122,12 @@ function DogEdit() {
         />
         <br />
         <label htmlFor="aboutme">Sobre mi:</label>
-        <input
+        <textarea
           type="text"
           name="aboutme"
           value={aboutme}
           onChange={handleAboutmeChange}
-        />
+        ></textarea> 
         <br />
         {/* PREGUNTAR POR LA IMAGEN  */}
         <input type="file" onChange={handleImgUpload} />

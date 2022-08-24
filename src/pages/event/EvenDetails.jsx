@@ -77,7 +77,7 @@ function EvenDetails() {
       console.log("RESPONSE DE LISTA",response.data)// muestra todos los detalles del evento y pet contodos su detalles 
       setDetailsEvent(response.data) // actulaiza la lista al momento de añadir al perrito
       
-       //navigate("/event")
+      //navigate("/event")
     } catch (error) {
        navigate("/error")
     }

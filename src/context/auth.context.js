@@ -16,9 +16,11 @@ function AuthWrapper(props) { // siempre resive props
 
  const authenticateUser = async () => {
     // esta funcion verifica si el usuario
+    console.log("intentando authenticar")
     try {
         const response = await verifyService()// resive el token y verifica si el es valido o no 
         setIsUserActive(true) 
+        console.log("RESPONSE LOGIN", response.data)
         setUser(response.data)
         setFetching(false)
     } catch (error) {
