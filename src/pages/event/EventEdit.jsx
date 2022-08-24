@@ -75,68 +75,76 @@ function EventEdit() {
       navigate("/error");
     }
   };
-    // IMAGEN
+  // IMAGEN
 
-    const handleImgUpload = async (event) => {
-      console.log("TARGET IMAGEN", event.target.files[0]);
-      const form = new FormData();
-      form.append("image", event.target.files[0]);
-      try {
-        const response = await uploadService(form);
-        console.log("RESPONSE IMG URL", response.data.imageUrl);
-        setImageUrl(response.data.imageUrl);
-      } catch (error) {
-        navigate("/error");
-      }
-    };
-  
+  const handleImgUpload = async (event) => {
+    console.log("TARGET IMAGEN", event.target.files[0]);
+    const form = new FormData();
+    form.append("image", event.target.files[0]);
+    try {
+      const response = await uploadService(form);
+      console.log("RESPONSE IMG URL", response.data.imageUrl);
+      setImageUrl(response.data.imageUrl);
+    } catch (error) {
+      navigate("/error");
+    }
+  };
 
-    return (
-      <div>
-        <h1>editar evento</h1>
-        <form>
+  return (
+    <div className="container">
+      <form>
+        <div className="title">Editar eventos</div>
+        <div className="input-container">
           <label htmlFor="eventname">Nombre del evento:</label>
           <input
+          className="input"
             type="text"
             name="eventname"
             value={eventname}
             onChange={handleEventNameChange}
           />
-          <br />
+        </div>
+        <div className="input-container">
           <label htmlFor="date">Fecha:</label>
           <input
+          className="input"
             type="date"
             name="date"
             value={date}
             onChange={handleDateEventChange}
           />
-          <br />
+        </div>
+        <div className="input-container">
           <label htmlFor="description">Descripcion:</label>
           <input
+          className="input"
             type="text"
             name="description"
             value={description}
             onChange={handleDescriptionChange}
           ></input>
-          <br />
+        </div>
+
+        <div className="input-container">
           <label htmlFor="addres">Direccion:</label>
           <input
+          className="input"
             type="text"
             name="addres"
             value={addres}
             onChange={handleAddressChange}
           ></input>
-          <br />
-          <button onClick={handleEdit}>Editar</button>
-          <br />
+        </div>
+        <div className="input-container">
           <input type="file" onChange={handleImgUpload} />
-          <img src={imageUrl} alt="image" width={80} />
-          <br />
-          <button onClick={handleEdit}>Editar</button>
-        </form>
-      </div>
-    );
-  
+    
+        </div>
+        <img src={imageUrl} alt="image" width={200} />
+
+        <button className="submit" onClick={handleEdit}>Editar</button>
+      </form>
+    </div>
+  );
 }
 
 export default EventEdit;

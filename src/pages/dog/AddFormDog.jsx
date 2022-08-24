@@ -112,7 +112,7 @@ function AddFormDog() {
             ></textarea>
           </div>
           <div className="input-container">
-            <label htmlFor="aboutme">Imagen</label>
+            <label >Imagen</label>
             <input type="file" onChange={handleImgUpload} />
             <img src={imageUrl} alt="image" width={80} />
           </div>

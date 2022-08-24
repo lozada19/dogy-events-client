@@ -1,107 +1,130 @@
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 //servicios
-import { addEventService } from "../../services/event.services"
-import { uploadService } from "../../services/upload.services"
-
-
+import { addEventService } from "../../services/event.services";
+import { uploadService } from "../../services/upload.services";
 
 function AddFormEvent() {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   // ESTADOS CONTROLADOS => controlan los campos
-  const [ eventname, setEventname ] = useState(null)
-  const [ date, setDate ] = useState(null)
-  const [ description, setDescription ] = useState(null)
-  const [ address, setAddress ] = useState(null) 
+  const [eventname, setEventname] = useState(null);
+  const [date, setDate] = useState(null);
+  const [description, setDescription] = useState(null);
+  const [address, setAddress] = useState(null);
 
-   //ESTDO PARA GUARDAR EL URL QUE VENDRA DE CLOUDINAYÇ
-   const [imageUrl, setImageUrl] = useState("")
+  //ESTDO PARA GUARDAR EL URL QUE VENDRA DE CLOUDINAYÇ
+  const [imageUrl, setImageUrl] = useState("");
 
-
-   //FUNCIONES QUE ACTUALIZAN LOS ESTADOS 
+  //FUNCIONES QUE ACTUALIZAN LOS ESTADOS
   const handleEventName = (event) => {
-    setEventname(event.target.value)
-  }
+    setEventname(event.target.value);
+  };
 
   const handleDate = (event) => {
-    setDate(event.target.value)
-  }
+    setDate(event.target.value);
+  };
 
   const handleDescription = (event) => {
-    setDescription(event.target.value)
-  }
+    setDescription(event.target.value);
+  };
 
   const handleAddress = (event) => {
-    setAddress(event.target.value)
-  }
+    setAddress(event.target.value);
+  };
 
   const handleSignup = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     const newEvent = {
       eventname: eventname,
       date: date,
       description: description,
       address: address,
-      image: imageUrl
-    }
+      image: imageUrl,
+    };
 
     try {
-      await addEventService(newEvent)
-      navigate("/event")
+      await addEventService(newEvent);
+      navigate("/event");
     } catch (error) {
-      navigate("/error")
+      navigate("/error");
     }
-  }
+  };
 
   const handleImgUpload = async (event) => {
-    console.log(event.target.files[0])
-    const form = new FormData()
-    form.append("image", event.target.files[0])
+    console.log(event.target.files[0]);
+    const form = new FormData();
+    form.append("image", event.target.files[0]);
     try {
-        const response = await uploadService(form)
-        setImageUrl(response.data.imageUrl)
+      const response = await uploadService(form);
+      setImageUrl(response.data.imageUrl);
     } catch (error) {
-        navigate("/error")
-        
+      navigate("/error");
     }
-}
+  };
 
-
-   
   return (
-    <div>
-        <h1>crear eventos </h1>
-        <form>
+    <div className="container">
+      <form>
+        <div className="title">Crea un evento</div>
+        <div className="input-container">
           <label htmlFor="eventname">Nombre del evento:</label>
-          <input type="text" name="eventname" onChange={handleEventName} value={eventname}/>
-          <br />
+          <input
+            className="input"
+            type="text"
+            name="eventname"
+            onChange={handleEventName}
+            value={eventname}
+          />
+        </div>
+
+        <div className="input-container">
           <label htmlFor="date">Fecha:</label>
-          <input type="date" name="date" onChange={handleDate} value={date}/>
-          <br />
+          <input
+            className="input"
+            type="date"
+            name="date"
+            onChange={handleDate}
+            value={date}
+          />
+        </div>
+
+        <div className="input-container">
           <label htmlFor="description">Descripcion:</label>
-          <textarea type="text" name="description" onChange={handleDescription} value={description}
-          ></textarea> 
-          <br />
+          <textarea
+            className="input"
+            type="text"
+            name="description"
+            onChange={handleDescription}
+            value={description}
+          ></textarea>
+        </div>
+        <div className="input-container">
           <label htmlFor="addres">Direccion:</label>
-          <textarea type="text" name="addres" onChange={handleAddress} value={address}
-          ></textarea> 
-          <br />
-          <button onClick={handleSignup}>Crear</button>
+          <textarea
+            className="input"
+            type="text"
+            name="addres"
+            onChange={handleAddress}
+            value={address}
+          ></textarea>
+        </div>
 
-          <div>
-            <h5>Añade una foto del evento:</h5>
-            <input type="file" onChange={handleImgUpload} />
-            <img src={imageUrl} alt="image" width={80} />
-          </div>
+        <div className="input-container">
+          <label>Imagen</label>
+          <input type="file" onChange={handleImgUpload} />
           
+        </div>
+        <img src={imageUrl} alt="image" width={80} />
 
-        </form>
+        <button className="submit" onClick={handleSignup}>
+          Crear
+        </button>
+      </form>
     </div>
-  )
+  );
 }
 
-export default AddFormEvent
+export default AddFormEvent;
