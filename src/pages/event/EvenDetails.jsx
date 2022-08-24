@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
+import { useContext } from 'react'
+import { AuthContext } from '../../context/auth.context'
 //service
 import { deleteEventSernvice, getEventeDetailsService, addMyDogServise} from "../../services/event.services"
 import { getMyDogServise } from "../../services/dog.services"
@@ -9,6 +11,8 @@ function EvenDetails() {
 
   const navigate = useNavigate()
   const { eventId } = useParams()
+
+  const { user } = useContext(AuthContext)
   
   //ESTADOS
   const [ detailsEvent, setDetailsEvent ] = useState(null)
@@ -103,8 +107,8 @@ function EvenDetails() {
         <img src={detailsEvent.image} alt="image" width={150}/>
 
         <br />
-        <button onClick={handleDelete}>Borrar</button>
-        <Link to={`/event/${eventId}/edit`}><button>Editar</button></Link>
+        {user._id == detailsEvent.owner._id ? <button onClick={handleDelete}>Borrar</button> : null}
+        {user._id == detailsEvent.owner._id ? <Link to={`/event/${eventId}/edit`}><button>Editar</button></Link> : null}
         <br />
 
         <form onSubmit={addMyDog}> 
