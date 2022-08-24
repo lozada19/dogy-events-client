@@ -55,7 +55,7 @@ function DogDetails() {
         <p>Raza: {detailsDog.breed}</p>
         <p>Sobre mi: {detailsDog.aboutme}</p>
         <p>Dueño:{detailsDog.owner.username}</p>
-        <img src={detailsDog.image} alt="image" width={150}/>
+        <img src={detailsDog.image} alt="image" width={200}/>
 
         {user._id == detailsDog.owner._id ? <button onClick={handleDelete} >Borrar</button> : null}
         {user._id == detailsDog.owner._id ? <Link to={`/dog/${dogId}/edit`}><button>Editar</button></Link> : null}

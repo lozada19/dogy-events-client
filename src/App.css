@@ -59,7 +59,7 @@ form {
   margin-top: 30px;
   position: relative;
   font-size: 18px;
- font-weight: 600;
+  font-weight: 600;
 }
 
 .input {
@@ -118,4 +118,31 @@ form {
 
 .submit:active {
   background-color: #06b;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.list-dog{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+li{
+  list-style: none;
+  
+}
+
+.image-dog {
+ width: 80px;
+ height: 80px;
+ border: 2px solid white;
+ border-radius: 50%;
+}
+
+.list-name.dog{
+  font-family: sans-serif;
 }
