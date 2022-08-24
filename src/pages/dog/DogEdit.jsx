@@ -93,49 +93,61 @@ function DogEdit() {
   };
 
   return (
-    <div>
-      <h1>Editar perritos</h1>
+    <div className="container">
+    
+        <form>
+          <div className="title">Editar perritos</div>
+          <div className="input-container">
+            <label htmlFor="nameDog">Nombre</label>
+            <input
+             className="input"
+              type="text"
+              name="nameDog"
+              value={nameDog}
+              onChange={handleNameDogChange}
+            />
+          </div>
+          <div className="input-container">
+            <label htmlFor="dateofBirth">Fecha de nacimiento:</label>
+            <input
+             className="input"
+              type="date"
+              name="dateofBirth"
+              value={dateofBirth}
+              onChange={handleDateofBirthChange}
+            />
+          </div>
+          <div className="input-container">
+            <label htmlFor="breed">Raza:</label>
+            <input
+             className="input"
+              type="text"
+              name="breed"
+              value={breed}
+              onChange={handleBreedChange}
+            />
+          </div>
+          <div className="input-container">
+            <label htmlFor="aboutme">Sobre mi:</label>
+            <textarea
+             className="input"
+              type="text"
+              name="aboutme"
+              value={aboutme}
+              onChange={handleAboutmeChange}
+            ></textarea>
+          </div>
+          <div className="input-container">
+            <input type="file" onChange={handleImgUpload} />
+          </div>
+          <img src={imageUrl} alt="image" width={200}  />
 
-      <form>
-        <label htmlFor="nameDog">Nombre:</label>
-        <input
-          type="text"
-          name="nameDog"
-          value={nameDog}
-          onChange={handleNameDogChange}
-        />
-        <br />
-        <label htmlFor="dateofBirth">Fecha de nacimiento:</label>
-        <input
-          type="date"
-          name="dateofBirth"
-          value={dateofBirth}
-          onChange={handleDateofBirthChange}
-        />
-        <br />
-        <label htmlFor="breed">Raza:</label>
-        <input
-          type="text"
-          name="breed"
-          value={breed}
-          onChange={handleBreedChange}
-        />
-        <br />
-        <label htmlFor="aboutme">Sobre mi:</label>
-        <textarea
-          type="text"
-          name="aboutme"
-          value={aboutme}
-          onChange={handleAboutmeChange}
-        ></textarea> 
-        <br />
-        {/* PREGUNTAR POR LA IMAGEN  */}
-        <input type="file" onChange={handleImgUpload} />
-        <img src={imageUrl} alt="image" width={80} />
-        <br />
-        <button onClick={handleEdit}>Editar</button>
-      </form>
-    </div>
+      
+          <button className="submit" onClick={handleEdit}>Editar</button>
+       
+        </form>
+      </div>
+
   );
 }
 
