@@ -2,7 +2,7 @@ import React from 'react'
 
 function NotFound() {
   return (
-    <div>NotFound</div>
+    <h1 className='noyFound'>Lo siento, te has perdido tienes que registrarte</h1>
   )
 }
 

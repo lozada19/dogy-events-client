@@ -61,7 +61,7 @@ function EventEdit() {
     event.preventDefault();
 
     const eventObj = {
-      eventame: eventname,
+      eventname: eventname,
       date: date,
       description: description,
       address: addres,
@@ -69,6 +69,7 @@ function EventEdit() {
     };
 
     try {
+      console.log("EDITAR",eventObj)
       await updateEventService(eventId, eventObj);
       navigate("/event");
     } catch (error) {

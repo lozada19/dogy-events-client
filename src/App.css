@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
 .App {
-  font-family: sans-serif;
+  font-family: 'Space Mono', monospace, sans-serif;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -17,15 +19,91 @@ body {
   background-color: white ;
   padding: 15px;
   flex-shrink: 1;
-  margin-bottom: 5em;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 2px;
 }
 a {
   margin: 20px;
 }
 
-.inicio {
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+.inicio  {
+  height: 100%;
+  width: 100%;
 }
+
+.inicio img  {
+ position: absolute;
+}
+
+img {
+  object-fit: cover; 
+}
+
+.image1{
+  width: 30%;
+  height: 250px;
+  max-width: 300px;
+  border-radius: 8%;
+  left: 80%;       
+  top: 20%;   
+}
+ 
+
+.image2{
+  width: 30%;
+  height: 250px;
+  max-width: 250px;
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+  right: 0%;                
+  top: 70%;   
+}
+.image3{
+  width: 25%;
+  height: 160px;
+  max-width: 300px;
+  border-radius: 10%;
+  right: 35%;                
+  top: 70%;   
+}
+.image4{
+  width: 15%;
+  height: 200px;
+  max-width: 300px;
+  border-radius: 5%;
+  right: 40%;                
+  top: 10%;   
+
+}
+.image5{
+  width: 30%;
+  height: 300px;
+  max-width: 300px;
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 10%;
+  left: 0%;                     
+  top: 70%;   
+}
+.image6{
+  width: 30%;
+  max-width: 250px;
+  height: 280px;
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 10%;
+  left: 0%;                     
+  top: 10%;   
+}
+
+.information{
+  position: absolute;
+  left: 50%;                     
+  top: 50%;                         
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 .perfil{
   display: flex;
@@ -296,6 +374,12 @@ li{
   background-repeat: no-repeat;
   
   
+}
+
+.title-home{
+  color: black;
+  font-size: 46px;
+  font-weight: 600;
 }
 
 
