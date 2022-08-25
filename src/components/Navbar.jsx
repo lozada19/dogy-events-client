@@ -48,7 +48,7 @@ function Navbar() {
         <NavLink style={selecStyle} to="/event" end={true}>Ver eventos</NavLink>
         <NavLink style={selecStyle}  to="/event/add-form" >Crear evento</NavLink>
         {/* <Link onClick={handleLogout} >Perfil</Link> */}
-        <button onClick={handleLogout}>Cerrar sesion</button>
+        <button className="button-cerrar" onClick={handleLogout}>Cerrar sesion</button>
         {/* <p>{user.email}</p>  */}
       </div>
     )
