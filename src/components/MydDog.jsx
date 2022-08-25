@@ -38,7 +38,7 @@ function MydDog() {
             <div className="list">
               <div className="list-dog">
                 <img className="image-dog" src={eachMyDog.image} alt="image" />
-                <Link  className="list-name.dog" to={`/dog/${eachMyDog._id}/details`}>
+                <Link  className="list-name-dog" to={`/dog/${eachMyDog._id}/details`}>
                   {eachMyDog.namedog}
                 </Link>
               </div>

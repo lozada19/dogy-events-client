@@ -218,6 +218,7 @@ form {
   padding: 10px;
   width: 300px;
   margin-top: 10px;
+  
 }
 
 li{
@@ -231,8 +232,11 @@ li{
  border-radius: 50%;
 }
 
-.list-name.dog{
-  font-family: sans-serif;
+.list-name-dog{
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .container-details {

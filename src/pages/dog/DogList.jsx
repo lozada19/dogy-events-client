@@ -42,7 +42,7 @@ function DogList() {
               <div className="list-dog">
                 <img className="image-dog" src={eachDog.image} alt="image" />
                 <Link
-                  className="list-name.dog"
+                  className="list-name-dog"
                   to={`/dog/${eachDog._id}/details`}
                 >
                   {eachDog.namedog}

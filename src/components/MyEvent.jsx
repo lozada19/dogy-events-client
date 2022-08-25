@@ -38,7 +38,7 @@ function MyEvent() {
               <div className="list-dog">
                 <img className="image-dog" src={eachMyEvent.image} alt="image" />
                 <Link
-                  className="list-name.dog"
+                  className="list-name-dog"
                   to={`/event/${eachMyEvent._id}/details`}
                 >
                   {eachMyEvent.eventname}
