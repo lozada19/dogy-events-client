@@ -32,26 +32,28 @@ function DogList() {
   console.log("test", allDog);
 
   return (
-    <div>
-      <h1 className="list">Lista de perritos</h1>
+    <div className="list-container">
+      <h1 className="title">Lista de perritos</h1>
 
-      {allDog.map((eachDog) => {
-        return (
-          <li key={eachDog._id}>
-            <div className="list">
-              <div className="list-dog">
-                <img className="image-dog" src={eachDog.image} alt="image" />
-                <Link
-                  className="list-name-dog"
-                  to={`/dog/${eachDog._id}/details`}
-                >
-                  {eachDog.namedog}
-                </Link>
-              </div>
-            </div>
-          </li>
-        );
-      })}
+      <div className="list">
+        {allDog.map((eachDog) => {
+          return (
+            <li key={eachDog._id}>
+          
+                <div className="list-dog">
+                  <img className="image-dog" src={eachDog.image} alt="image" />
+                  <Link
+                    className="list-name-dog"
+                    to={`/dog/${eachDog._id}/details`}
+                  >
+                    {eachDog.namedog}
+                  </Link>
+                </div>
+             
+            </li>
+          );
+        })}
+      </div>
     </div>
   );
 }

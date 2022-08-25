@@ -33,13 +33,12 @@ function EventList() {
 
   console.log(allEvent);
   return (
-    <div>
-   <h1 className="list">Ver eventos</h1>
-
-      {allEvent.map((eachEvent) => {
-        return (
-          <li key={eachEvent._id}>
-            <div className="list">
+    <div className="list-container">
+      <h1 className="title">Ver eventos</h1>
+      <div className="list">
+        {allEvent.map((eachEvent) => {
+          return (
+            <li key={eachEvent._id}>
               <div className="list-dog">
                 <img className="image-dog" src={eachEvent.image} alt="image" />
                 <Link
@@ -49,10 +48,10 @@ function EventList() {
                   {eachEvent.eventname}
                 </Link>
               </div>
-            </div>
-          </li>
-        );
-      })}
+            </li>
+          );
+        })}
+      </div>
     </div>
   );
 }

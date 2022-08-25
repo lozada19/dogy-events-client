@@ -39,7 +39,7 @@ function Navbar() {
   if ( isUserActive === true ) {
     return (
       <div className='nav-bar'>
-        <NavLink style={selecStyle} to="/">Inicio</NavLink>
+        
         <NavLink style={selecStyle} to="/profile">Perfil</NavLink>
 
         <NavLink style={selecStyle}  to="/dog" end={true}>Ver Perritos</NavLink>

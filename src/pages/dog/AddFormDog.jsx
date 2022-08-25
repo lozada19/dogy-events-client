@@ -70,7 +70,7 @@ function AddFormDog() {
     <div className="container">
       
         <form>
-          <div className="title">Crea un perro</div>
+          <div className="title">Crea un perrito</div>
           <div className="input-container">
             <label htmlFor="nameDog">Nombre</label>
             <input
@@ -116,7 +116,7 @@ function AddFormDog() {
             <input type="file" onChange={handleImgUpload} />
             
           </div>
-          <img src={imageUrl} alt="image" width={80} />
+          <img className="image-selector" src={imageUrl} alt="image" width={80} />
 
           <div>
             <button className="submit" onClick={handleSignup}>

@@ -114,10 +114,11 @@ function AddFormEvent() {
 
         <div className="input-container">
           <label>Imagen</label>
+         
           <input type="file" onChange={handleImgUpload} />
           
         </div>
-        <img src={imageUrl} alt="image" width={80} />
+        <img className="image-selector" src={imageUrl} alt="image" />
 
         <button className="submit" onClick={handleSignup}>
           Crear
