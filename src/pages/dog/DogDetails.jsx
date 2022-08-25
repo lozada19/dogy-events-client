@@ -42,7 +42,7 @@ function DogDetails() {
   };
 
   if (isFetching === true) {
-    return <h3>... is Loading</h3>;
+    return <h3 className="isLoading">... is Loading</h3>;
   }
 
   console.log("DETALLES DOG", detailsDog);

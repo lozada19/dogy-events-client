@@ -14,6 +14,9 @@ import EveentEdit from './pages/event/EventEdit'
 import Home from './pages/Home'
 import AddFormDog from './pages/dog/AddFormDog';
 import AddFormEvent from './pages/event/AddFormEvent';
+import Error from './pages/Error';
+import NotFound from './pages/NotFound';
+
 
 
 
@@ -23,7 +26,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/profile" element={ <Profile/> }/>
 
         <Route path="/dog" element={<DogList/>}/>
         {/* <Route path="/dog/myDog" element={<MydDog/>}/> */}
@@ -39,6 +42,9 @@ function App() {
 
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/login" element={<Login/>}/>
+
+        <Route path="/error" element={<Error/>}/>
+        <Route path="/*" element={<NotFound />}/>
       </Routes>
     </div>
   );
