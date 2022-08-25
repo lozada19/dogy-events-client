@@ -7,6 +7,11 @@
   flex-direction: column;
 }
 
+button{
+  font-family: 'Space Mono', monospace, sans-serif;
+
+}
+
 html, body, #root, .App {
  height: 100%;
 }
@@ -190,6 +195,7 @@ form {
   color: #eee;
   cursor: pointer;
   font-size: 18px;
+  
   height: 50px;
   margin-top: 38px;
   outline: 0;
@@ -329,7 +335,6 @@ li{
   box-sizing: border-box;
   color: #eee;
   font-size: 13px;
-  width: 100px;
   height: 25px;
 }
 .input-añadir {
