@@ -140,7 +140,7 @@ function DogEdit() {
           <div className="input-container">
             <input type="file" onChange={handleImgUpload} />
           </div>
-          <img src={imageUrl} alt="image" width={200}  />
+          <img src={imageUrl} alt="image" width={200}/>
 
       
           <button className="submit" onClick={handleEdit}>Editar</button>

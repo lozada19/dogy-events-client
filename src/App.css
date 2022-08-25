@@ -31,20 +31,21 @@ a {
   justify-content: space-evenly;
   padding-top: 100px;
 }
-
+/*  */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
-
+/* formularuo */
 form {
   background-color: white;
   border-radius: 10px;
   box-sizing: border-box;
   padding: 30px;
   width: 450px;
+  margin-top: 110px;
 }
 
 .title {
@@ -53,6 +54,7 @@ form {
   font-weight: 600;
 }
 
+/* letras nombre */
 .input-container {
   height: 50px;
   width: 100%;
@@ -62,6 +64,7 @@ form {
   font-weight: 600;
 }
 
+/* cuadros de relleno  */
 .input {
   background-color: #f2f2f2;
   border-radius: 12px;
@@ -75,9 +78,9 @@ form {
   width: 100%;
 }
 
+/* iniciar sesion */
 .placeholder {
-  color: #808097;
-  font-family: sans-serif;
+
   left: 20px;
   line-height: 14px;
   font-size: 18px;
@@ -122,18 +125,20 @@ form {
 
 .list {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 10px;
+  padding-top: 50px;
 }
 .list-dog{
   display: flex;
   align-items: center;
   justify-content: flex-start;
+ 
+  
 }
 
 li{
   list-style: none;
-  
 }
 
 .image-dog {
@@ -146,3 +151,58 @@ li{
 .list-name.dog{
   font-family: sans-serif;
 }
+
+.container-details {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.cart-details {
+  background-color: white;
+  border-radius: 39px;
+  box-sizing: border-box;
+  padding: 30px;
+  width: 650px;
+  height: 500px;
+  margin-top: 110px;
+  padding-top: 0px;
+  
+}
+
+.cart-text {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+}
+
+.cart-text2 {
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.cart-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center ;
+}
+
+.button {
+  background-color: #08d ;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  height: 50px;
+  align-items: center ;
+  
+}
+
+.image-details{
+  border-radius: 12px;
+  border: 0;
+  width: 180px;
+  height: 200px;
+}
+

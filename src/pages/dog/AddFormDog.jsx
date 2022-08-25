@@ -114,8 +114,9 @@ function AddFormDog() {
           <div className="input-container">
             <label >Imagen</label>
             <input type="file" onChange={handleImgUpload} />
-            <img src={imageUrl} alt="image" width={80} />
+            
           </div>
+          <img src={imageUrl} alt="image" width={80} />
 
           <div>
             <button className="submit" onClick={handleSignup}>
