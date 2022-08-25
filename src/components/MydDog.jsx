@@ -16,7 +16,7 @@ function MydDog() {
   const getMyDog = async () => {
     try {
       const response = await getMyDogServise();
-      console.log("RESPONSEMYDOG", response.data);
+
       setMyDog(response.data);
       setIsFetching(false);
       // navigate("/profile") no se redireccion
@@ -31,14 +31,17 @@ function MydDog() {
 
   return (
     <div>
-     <h1 className="list">Mis perritos</h1>
+      <h1 className="list">Mis perritos</h1>
       {myDog.map((eachMyDog) => {
         return (
           <li key={eachMyDog._id}>
             <div className="list">
               <div className="list-dog">
                 <img className="image-dog" src={eachMyDog.image} alt="image" />
-                <Link  className="list-name-dog" to={`/dog/${eachMyDog._id}/details`}>
+                <Link
+                  className="list-name-dog"
+                  to={`/dog/${eachMyDog._id}/details`}
+                >
                   {eachMyDog.namedog}
                 </Link>
               </div>

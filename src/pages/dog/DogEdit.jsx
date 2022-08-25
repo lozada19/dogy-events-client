@@ -26,10 +26,7 @@ function DogEdit() {
     setNameDog(event.target.value);
   };
 
-  console.log("DATEOFBIRTH", dateofBirth);
-
   const handleDateofBirthChange = (event) => {
-    console.log("EVENT TARGET", event.target.value);
     setDateofBirth(event.target.value);
   };
 
@@ -53,14 +50,12 @@ function DogEdit() {
       setBreed(response.data.breed);
       setAboutme(response.data.aboutme);
       setImageUrl(response.data.image);
-      console.log("HANLE", response.data);
     } catch (error) {
       navigate("/error");
     }
   };
 
   const handleEdit = async (event) => {
-    console.log("HANLE", handleEdit);
     event.preventDefault();
 
     const dogObj = {
@@ -80,12 +75,11 @@ function DogEdit() {
   };
   // IMAGEN
   const handleImgUpload = async (event) => {
-    console.log("TARGET IMAGEN", event.target.files[0]);
     const form = new FormData();
     form.append("image", event.target.files[0]);
     try {
       const response = await uploadService(form);
-      console.log("RESPONSE IMG URL", response.data.imageUrl);
+
       setImageUrl(response.data.imageUrl);
     } catch (error) {
       navigate("/error");
@@ -94,60 +88,58 @@ function DogEdit() {
 
   return (
     <div className="container">
-    
-        <form>
-          <div className="title">Editar perritos</div>
-          <div className="input-container">
-            <label htmlFor="nameDog">Nombre</label>
-            <input
-             className="input"
-              type="text"
-              name="nameDog"
-              value={nameDog}
-              onChange={handleNameDogChange}
-            />
-          </div>
-          <div className="input-container">
-            <label htmlFor="dateofBirth">Fecha de nacimiento:</label>
-            <input
-             className="input"
-              type="date"
-              name="dateofBirth"
-              value={dateofBirth}
-              onChange={handleDateofBirthChange}
-            />
-          </div>
-          <div className="input-container">
-            <label htmlFor="breed">Raza:</label>
-            <input
-             className="input"
-              type="text"
-              name="breed"
-              value={breed}
-              onChange={handleBreedChange}
-            />
-          </div>
-          <div className="input-container">
-            <label htmlFor="aboutme">Sobre mi:</label>
-            <textarea
-             className="input"
-              type="text"
-              name="aboutme"
-              value={aboutme}
-              onChange={handleAboutmeChange}
-            ></textarea>
-          </div>
-          <div className="input-container">
-            <input type="file" onChange={handleImgUpload} />
-          </div>
-          <img src={imageUrl} alt="image" width={200}/>
+      <form>
+        <div className="title">Editar perritos</div>
+        <div className="input-container">
+          <label htmlFor="nameDog">Nombre</label>
+          <input
+            className="input"
+            type="text"
+            name="nameDog"
+            value={nameDog}
+            onChange={handleNameDogChange}
+          />
+        </div>
+        <div className="input-container">
+          <label htmlFor="dateofBirth">Fecha de nacimiento:</label>
+          <input
+            className="input"
+            type="date"
+            name="dateofBirth"
+            value={dateofBirth}
+            onChange={handleDateofBirthChange}
+          />
+        </div>
+        <div className="input-container">
+          <label htmlFor="breed">Raza:</label>
+          <input
+            className="input"
+            type="text"
+            name="breed"
+            value={breed}
+            onChange={handleBreedChange}
+          />
+        </div>
+        <div className="input-container">
+          <label htmlFor="aboutme">Sobre mi:</label>
+          <textarea
+            className="input"
+            type="text"
+            name="aboutme"
+            value={aboutme}
+            onChange={handleAboutmeChange}
+          ></textarea>
+        </div>
+        <div className="input-container">
+          <input type="file" onChange={handleImgUpload} />
+        </div>
+        <img src={imageUrl} alt="image" width={200} />
 
-      
-          <button className="submit" onClick={handleEdit}>Editar</button>
-       
-        </form>
-      </div>
-
+        <button className="submit" onClick={handleEdit}>
+          Editar
+        </button>
+      </form>
+    </div>
   );
 }
 

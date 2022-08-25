@@ -10,7 +10,7 @@ const getDogDetailsService = (dogId) => {
 }
 
 const addDogService = (newDog) => {
-    console.log(newDog)
+    
     return service.post("/dog",newDog)
 }
 

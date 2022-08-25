@@ -54,7 +54,7 @@ function AddFormEvent() {
   };
 
   const handleImgUpload = async (event) => {
-    console.log(event.target.files[0]);
+    
     const form = new FormData();
     form.append("image", event.target.files[0]);
     try {

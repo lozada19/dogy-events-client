@@ -18,7 +18,7 @@ function EventList() {
   const getEvent = async () => {
     try {
       const response = await getEventService();
-      console.log("RESPONDE.DATA", response.data);
+      
       setAllEvent(response.data);
       setIsFetching(false);
       navigate("/event");
@@ -31,7 +31,7 @@ function EventList() {
     return <h3 className="isLoading">... is Loading</h3>;
   }
 
-  console.log(allEvent);
+ 
   return (
     <div className="list-container">
       <h1 className="title">Ver eventos</h1>

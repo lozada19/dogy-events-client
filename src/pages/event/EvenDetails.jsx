@@ -35,7 +35,7 @@ function EvenDetails() {
   const getMydog = async () => {
     try {
       const response = await getMyDogServise();
-      console.log("GETMYDOG", response.data); // los perritos de una persona
+     
       setMyDog(response.data);
     } catch (error) {}
   };
@@ -43,8 +43,7 @@ function EvenDetails() {
   const getDetailsEvent = async () => {
     try {
       const response = await getEventeDetailsService(eventId);
-      console.log("pet", response.data.pet); // un array vacio
-      console.log("RESPONSE EVENT", response.data); // muestra todos los detalles del evento y pet contodos su detalles
+      
       setDetailsEvent(response.data);
       setIsFetching(false);
     } catch (error) {
@@ -63,7 +62,7 @@ function EvenDetails() {
   // parte del formulario
 
   const handleMyDog = (event) => {
-    console.log("HANDLEMYDOG", event.target.value);
+    
     setChoosenDog(event.target.value);
   };
 
@@ -75,11 +74,10 @@ function EvenDetails() {
     };
 
     try {
-      console.log("perrito añadido", choosenDog);
-      console.log(eventId);
+      
 
       const response = await addMyDogServise(eventId, choosenDog);
-      console.log("RESPONSE DE LISTA", response.data); // muestra todos los detalles del evento y pet contodos su detalles
+      
       setDetailsEvent(response.data); // actulaiza la lista al momento de añadir al perrito
 
       //navigate("/event")
@@ -92,10 +90,7 @@ function EvenDetails() {
     return <h3 className="isLoading">... is Loading</h3>;
   }
 
-  console.log("DETALLES EVENT", detailsEvent);
-  console.log("MYDOG", myDog); // mis perritos
-  console.log("DETALLES MAP", detailsEvent.pet); // se muestran todos los detalles de los perros agregados
-
+  
   return (
     <div className="container-events">
       <div className="cart-events">

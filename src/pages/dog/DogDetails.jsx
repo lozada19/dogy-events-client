@@ -24,7 +24,7 @@ function DogDetails() {
   const getDetailsDog = async () => {
     try {
       const response = await getDogDetailsService(dogId);
-      console.log("RESPONSE DOG", response.data);
+      
       setDetailsDog(response.data);
       setIsFetching(false);
     } catch (error) {
@@ -45,7 +45,7 @@ function DogDetails() {
     return <h3 className="isLoading">... is Loading</h3>;
   }
 
-  console.log("DETALLES DOG", detailsDog);
+  
   return (
     <div className="container-details">
       <div className="cart-details">

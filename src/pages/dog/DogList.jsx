@@ -29,7 +29,7 @@ function DogList() {
     return <h3 className="isLoading">... is Loading</h3>;
   }
 
-  console.log("test", allDog);
+
 
   return (
     <div className="list-container">

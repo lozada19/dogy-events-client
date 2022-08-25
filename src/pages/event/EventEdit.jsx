@@ -45,14 +45,14 @@ function EventEdit() {
   const getDetailsEvent = async () => {
     try {
       const response = await getEventeDetailsService(eventId);
-      console.log("RESPONSE EVENT EDIT", response.data);
+    
       setEventName(response.data.eventname);
       setDateEvent(response.data.date);
       setDescriptionEvent(response.data.description);
       setAddressEvent(response.data.address);
       setImageUrl(response.data.image); //image se llama en bd
     } catch (error) {
-      console.log("ERROR EVENT", error);
+      
       navigate("/error");
     }
   };
@@ -69,7 +69,7 @@ function EventEdit() {
     };
 
     try {
-      console.log("EDITAR",eventObj)
+      
       await updateEventService(eventId, eventObj);
       navigate("/event");
     } catch (error) {
@@ -79,12 +79,12 @@ function EventEdit() {
   // IMAGEN
 
   const handleImgUpload = async (event) => {
-    console.log("TARGET IMAGEN", event.target.files[0]);
+    
     const form = new FormData();
     form.append("image", event.target.files[0]);
     try {
       const response = await uploadService(form);
-      console.log("RESPONSE IMG URL", response.data.imageUrl);
+   
       setImageUrl(response.data.imageUrl);
     } catch (error) {
       navigate("/error");
