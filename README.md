@@ -1,4 +1,4 @@
-# Dogy Events
+# Dogy Events - client
 
 ## Descripcion 
 - Es una app donde puedes crear eventos para tu mascota y tambien hacer inscribir a tu perrito en ellos
@@ -70,7 +70,13 @@
 - Home.jsx
 - NotFound.jsx
 
+### Git
+[Repository Link](https://github.com/rebloza/dogy-events-client)
+[Repository Link](https://github.com/rebloza/dogy-events-server)
+[Deploy Link](https://dogy-events.netlify.app/)
 
+### Diapositivas
+[Enlace Slides.com]()
 
 
 
