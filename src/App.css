@@ -1,127 +1,155 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
 
 .App {
-  font-family: 'Space Mono', monospace, sans-serif;
+  font-family: "Space Mono", monospace, sans-serif;
   margin: 0;
   display: flex;
   flex-direction: column;
 }
 
-button{
-  font-family: 'Space Mono', monospace, sans-serif;
-
+button {
+  font-family: "Space Mono", monospace, sans-serif;
 }
 
-html, body, #root, .App {
- height: 100%;
+html,
+body,
+#root,
+.App {
+  height: 100vh;
 }
 
 body {
- background-color:#f2f2f2;
+  background-color: #f2f2f2;
 }
 
-.nav-bar{
-  background-color: white ;
+/* ------- Navbar ---------- */
+.nav-bar {
+  background-color: white;
   padding: 15px;
   flex-shrink: 1;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 2px;
+  font-size: 15px;
 }
+
 a {
   margin: 20px;
 }
 
-.inicio  {
+.logo {
+  margin: 0;
+  padding: 10px 10px;
+  font-weight: bold;
+  color: #08d;
+  font-size: 1.6em;
+}
+
+/* ------------------------ Home ------------------------ */
+.inicio {
   height: 100%;
   width: 100%;
 }
 
-.inicio img  {
- position: absolute;
+.inicio img {
+  position: absolute;
 }
 
 img {
-  object-fit: cover; 
+  object-fit: cover;
 }
 
-.image1{
+.image1 {
   width: 30%;
   height: 250px;
   max-width: 300px;
   border-radius: 8%;
-  left: 80%;       
-  top: 20%;   
+  left: 80%;
+  top: 20%;
 }
- 
 
-.image2{
+.image2 {
   width: 30%;
   height: 250px;
   max-width: 250px;
   border-top-left-radius: 10%;
   border-bottom-left-radius: 10%;
-  right: 0%;                
-  top: 70%;   
+  right: 0%;
+  top: 70%;
 }
-.image3{
+.image3 {
   width: 25%;
   height: 160px;
   max-width: 300px;
   border-radius: 10%;
-  right: 35%;                
-  top: 70%;   
+  right: 35%;
+  top: 70%;
 }
-.image4{
+.image4 {
   width: 15%;
   height: 200px;
   max-width: 300px;
   border-radius: 5%;
-  right: 40%;                
-  top: 10%;   
-
+  right: 40%;
+  top: 10%;
 }
-.image5{
+.image5 {
   width: 30%;
   height: 300px;
   max-width: 300px;
   border-top-right-radius: 10%;
   border-bottom-right-radius: 10%;
-  left: 0%;                     
-  top: 70%;   
+  left: 0%;
+  top: 70%;
 }
-.image6{
+.image6 {
   width: 30%;
   max-width: 250px;
   height: 280px;
   border-top-right-radius: 10%;
   border-bottom-right-radius: 10%;
-  left: 0%;                     
-  top: 10%;   
+  left: 0%;
+  top: 10%;
 }
 
-.information{
+.information {
   position: absolute;
-  left: 50%;                     
-  top: 50%;                         
+  left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
-
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-
-
-.perfil{
-  display: flex;
-  justify-content: space-evenly;
+.button-home {
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 15px;
+  height: 40px;
+  margin-top: 38px;
+  outline: 0;
+  text-align: center;
+  width: 100%;
 }
-/*  */
+
+/* ------------------------ Profile --------------------- */
+.perfil {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100vh;
+}
+
+/* --------------------- formularios ----------------- */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
- margin-top: 3em;
+  height: 100vh;
+  margin-top: 1em;
 }
 /* formularuo */
 form {
@@ -129,13 +157,12 @@ form {
   border-radius: 10px;
   box-sizing: border-box;
   padding: 30px;
-  width: 450px;
- 
+  width: 400px;
 }
 
 .title {
   color: black;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 600;
 }
 
@@ -145,8 +172,8 @@ form {
   width: 100%;
   margin-top: 30px;
   position: relative;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 600px;
 }
 
 /* cuadros de relleno  */
@@ -155,56 +182,53 @@ form {
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
-  color:#808097;
-  font-size: 18px;
-  height: 100%;
+  color: #808097;
+  font-size: 15px;
+  height: 80%;
   outline: 0;
-  padding: 4px 20px 0;
+  padding: 2px 15px 0;
   width: 100%;
-
 }
 
-/* iniciar sesion */
+/* ------------------- iniciar sesion ------------------ */
 .placeholder {
   left: 20px;
   line-height: 14px;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 400;
   pointer-events: none;
   position: absolute;
   top: 20px;
 }
 
-.image-selector{
+.image-selector {
   border-radius: 10px;
   width: 100%;
   height: 150px;
 }
 
-.input:not([value='']) ~ .placeholder {
+.input:not([value=""]) ~ .placeholder {
   opacity: 0;
 }
 
-.input[value=''] ~ .placeholder {
+.input[value=""] ~ .placeholder {
   color: #808097;
   opacity: 1;
 }
 
 .input:focus {
-  border:1px solid#08d;
+  border: 1px solid#08d;
 }
 
-
 .submit {
-  background-color: #08d ;
+  background-color: #08d;
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
   color: #eee;
   cursor: pointer;
-  font-size: 18px;
-  
-  height: 50px;
+  font-size: 15px;
+  height: 40px;
   margin-top: 38px;
   outline: 0;
   text-align: center;
@@ -215,52 +239,64 @@ form {
   background-color: #06b;
 }
 
-.list-dog{
+/* -------------------- Listas ------------------- */
+.list-dog {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   background-color: white;
   border-radius: 10px;
   box-sizing: border-box;
-  padding: 10px;
-  margin: 10px;
-  
+  padding: 20px;
+  margin: 15px;
+  height: 120px;
+  width: 350px;
 }
 
-.list{
+.list {
   display: flex;
   flex-wrap: wrap;
-  align-items:flex-start;
-}
-.list-container{
-  flex-direction: column;
-  display: flex;
-  align-items:center;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-li{
+.list-container {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+li {
   list-style: none;
 }
 
 .image-dog {
- width: 80px;
- height: 80px;
- border: 2px solid white;
- border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border: 2px solid white;
+  border-radius: 50%;
 }
 
-.list-name-dog{
+.list-name-dog {
   color: black;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
   text-decoration: none;
 }
+
+/* ----------------- detalles perros ------------------*/
 
 .container-details {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
+}
+
+.title-details {
+  color: black;
+  font-size: 25px;
+  font-weight: 600;
 }
 
 .cart-details {
@@ -271,79 +307,69 @@ li{
   margin: 20px;
   width: 650px;
   padding-top: 0px;
-  
 }
 
 .cart-text {
   display: flex;
-  flex-direction: row;
-  align-content: flex-start;
+
+  align-items: center;
+  flex-direction: column;
 }
 
 .cart-text2 {
   padding-left: 20px;
   display: flex;
   flex-direction: column;
+  font-size: 15px;
 }
+
 .cart-button {
   display: flex;
-  flex-direction: row;
-  align-items: center ;
+  justify-content: center;
+  align-items: center;
 }
 
 .button {
-  background-color: #08d ;
+  background-color: #08d;
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
   color: #eee;
   font-size: 18px;
   height: 50px;
-  align-items: center ;
-  
+  align-items: center;
+  font-size: 15px;
 }
 
-.image-details{
+.image-details {
   border-radius: 12px;
   width: 180px;
   height: 200px;
 }
 
-.container-events{
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- width: 100%;
-  height: 100%;
+/* --------------- detalles eventos --------------- */
+.container-events {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .cart-events {
   background-color: white;
   border-radius: 39px;
   box-sizing: border-box;
   padding: 40px;
-  width: 650px;
   margin: 20px;
   padding-top: 10px;
 }
-.button-añadir{
-  background-color: #08d ;
+.button-añadir {
+  background-color: #08d;
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
   color: #eee;
-  font-size: 13px;
+  font-size: 12px;
   width: 55px;
-  height: 25px;
-
-}
-.button-cerrar {
-  background-color: #08d ;
-  border-radius: 12px;
-  border: 0;
-  box-sizing: border-box;
-  color: #eee;
-  font-size: 13px;
   height: 25px;
 }
 .input-añadir {
@@ -351,14 +377,13 @@ li{
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
-  color:#808097;
-  font-size: 15px;
+  color: #808097;
+  font-size: 12px;
   height: 10%;
   margin: 10px;
   outline: 0;
   padding: 3px 20px 0;
   width: 50%;
-  
 }
 .forn-añadir {
   background-color: white;
@@ -369,19 +394,35 @@ li{
   align-items: center;
   margin-top: 10px;
   justify-content: center;
- 
 }
-.list-añadir{
+
+.list-añadir {
   font-size: 15px;
   align-items: center;
-
 }
-.title2{
+
+/* ------------ buton cerrar secion ------------ */
+.button-cerrar {
+  background-color: rgba(0, 136, 221, 0);
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: black;
+  font-size: 15px;
+  height: 25px;
+}
+
+.button-cerrar:hover {
+  background-color: none;
+  color: #08d;
+}
+
+.title2 {
   font-size: 18px;
   font-weight: 600;
 }
 
-.isLoading{
+.isLoading {
   font-size: 15px;
   display: flex;
   justify-content: center;
@@ -392,16 +433,183 @@ li{
   background-image: url("../public/error-404-faunaencasa-ogg.jpeg");
   height: 100%;
   background-repeat: no-repeat;
-  
-  
 }
 
-.title-home{
+.title-home {
   color: black;
   font-size: 46px;
   font-weight: 600;
 }
 
+footer {
+  background-color: rgb(230, 230, 230);
+  margin-top: 50px;
+}
 
+footer p {
+  margin: 0;
+  padding: 12px;
+  color: rgb(100, 100, 100);
+}
 
+.footer-container {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+@media (min-width: 850px) {
+  /* --------------- Navbar -------------------- */
+  .nav-bar {
+    background-color: white;
+    padding: 10px;
+    flex-shrink: 1;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 2px;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly;
+    margin: 0;
+  }
+
+  a {
+    margin: 20px;
+  }
+
+  .logo {
+    margin: 0;
+    font-weight: bold;
+    color: #08d;
+    font-size: 1.6em;
+  }
+  /* -------------------- perfil -------------------- */
+  .perfil {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  /* -------------------- Listas ------------------- */
+
+  .list-container {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .list-name-dog {
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  /* --------------------- formularios ----------------- */
+  .container {
+    height: 100vh;
+    margin-top: 3em;
+  }
+  /* formularuo */
+  form {
+    padding: 30px;
+    width: 450px;
+  }
+
+  .title {
+    font-size: 36px;
+    font-weight: 600;
+  }
+
+  /* letras nombre */
+  .input-container {
+    font-size: 18px;
+  }
+
+  /* cuadros de relleno  */
+  .input {
+    font-size: 18px;
+    padding: 4px 20px 0;
+    width: 100%;
+  }
+
+  /* ------------------- iniciar sesion ------------------ */
+
+  .placeholder {
+    font-size: 18px;
+  }
+
+  .submit {
+    font-size: 18px;
+    height: 50px;
+  }
+
+  /* ----------------- detalles perros ------------------*/
+
+  .container-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .cart-details {
+    background-color: white;
+    border-radius: 39px;
+    box-sizing: border-box;
+    padding: 30px;
+    margin: 20px;
+    width: 650px;
+    padding-top: 0px;
+  }
+
+  .title-details {
+    color: black;
+    font-size: 36px;
+    font-weight: 600;
+  }
+
+  .cart-text {
+    display: flex;
+    align-content: flex-start;
+    flex-direction: row;
+  }
+
+  .cart-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .button {
+    font-size: 18px;
+  }
+
+  .image-details {
+    border-radius: 12px;
+    width: 180px;
+    height: 200px;
+  }
+
+  /* --------------- detalles eventos --------------- */
+  .container-events {
+    height: 100%;
+    width: 100%;
+  }
+  .cart-events {
+    padding: 40px;
+    width: 650px;
+  }
+  .button-añadir {
+    font-size: 12px;
+  }
+  .input-añadir {
+    font-size: 15px;
+  }
+
+  .list-añadir {
+    font-size: 17px;
+    align-items: center;
+  }
+}

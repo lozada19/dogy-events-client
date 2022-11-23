@@ -112,13 +112,15 @@ function AddFormEvent() {
           ></textarea>
         </div>
 
-        <div className="input-container">
-          <label>Imagen</label>
-         
-          <input type="file" onChange={handleImgUpload} />
+        <div className="div-file">
+          <p className="text">Imagen</p>
+          <input id="btn" type="file" onChange={handleImgUpload} />
           
         </div>
-        <img className="image-selector" src={imageUrl} alt="image" />
+
+       
+        {imageUrl == null ? (<img className="image-selector" src={imageUrl} alt="image" width={80} /> ) : null }
+        
 
         <button className="submit" onClick={handleSignup}>
           Crear

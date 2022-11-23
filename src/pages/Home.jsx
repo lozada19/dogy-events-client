@@ -23,6 +23,9 @@ function Home() {
 
       <div className="information">
         <h1 className="title-home">Bienvenidos a Dogy Events</h1>
+        <div>
+          <a href="https://dogy-events.netlify.app/signup"><button className="button-home">Registrate</button></a>
+        </div>
 
         
       </div>

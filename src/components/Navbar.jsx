@@ -1,67 +1,87 @@
-import React from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import React from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 
-import { useContext } from 'react'
+import { useContext } from "react";
 
-import { AuthContext } from '../context/auth.context'
-
+import { AuthContext } from "../context/auth.context";
 
 function Navbar() {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
-
-  const { isUserActive, user, authenticateUser } = useContext(AuthContext)
+  const { isUserActive, user, authenticateUser } = useContext(AuthContext);
 
   const handleLogout = () => {
-    // aqui vamos a destruir el token 
-    localStorage.removeItem("authToken")
-    // autenticar el usuario 
-    authenticateUser()
+    // aqui vamos a destruir el token
+    localStorage.removeItem("authToken");
+    // autenticar el usuario
+    authenticateUser();
     // se redirecciona al usuario
-    navigate("/")
-
-  }
+    navigate("/");
+  };
 
   const activesStyles = {
     color: "black",
     textDecoration: "underline",
     // margin: "10px"
-  }
+  };
 
   const inactiveStyles = {
     color: "black",
     textDecoration: "none",
     //margin: "10px"
-  }
+  };
 
-  const selecStyle = (navinfo) => navinfo.isActive === true ? activesStyles : inactiveStyles
+  const selecStyle = (navinfo) =>
+    navinfo.isActive === true ? activesStyles : inactiveStyles;
 
-  if ( isUserActive === true ) {
+  if (isUserActive === true) {
     return (
-      <div className='nav-bar'>
-        
-        <NavLink style={selecStyle} to="/profile">Perfil</NavLink>
+    
+        <div className="nav-bar">
+          <div className="logo">Dogy Events</div>
 
-        <NavLink style={selecStyle}  to="/dog" end={true}>Ver Perritos</NavLink>
-        
-        <NavLink style={selecStyle}  to="/dog/add-form"  >Crear perritos</NavLink>
-        <NavLink style={selecStyle} to="/event" end={true}>Ver eventos</NavLink>
-        <NavLink style={selecStyle}  to="/event/add-form" >Crear evento</NavLink>
-        {/* <Link onClick={handleLogout} >Perfil</Link> */}
-        <button className="button-cerrar" onClick={handleLogout}>Cerrar sesion</button>
-        {/* <p>{user.email}</p>  */}
-      </div>
-    )
-  }else {
+          <NavLink style={selecStyle} to="/profile">
+            Perfil
+          </NavLink>
+
+          <NavLink style={selecStyle} to="/dog" end={true}>
+            Ver Perritos
+          </NavLink>
+
+          <NavLink style={selecStyle} to="/dog/add-form">
+            Crear perritos
+          </NavLink>
+          <NavLink style={selecStyle} to="/event" end={true}>
+            Ver eventos
+          </NavLink>
+          <NavLink style={selecStyle} to="/event/add-form">
+            Crear evento
+          </NavLink>
+          {/* <Link onClick={handleLogout} >Perfil</Link> */}
+          <button className="button-cerrar" onClick={handleLogout}>
+            Cerrar sesion
+          </button>
+          {/* <p>{user.email}</p>  */}
+        </div>
+    
+    );
+  } else {
     return (
-      <div className='nav-bar'>
-          <NavLink style={selecStyle} to="/">Inicio</NavLink>
-          <NavLink style={selecStyle} to="/signup">Registro</NavLink>
-          <NavLink style={selecStyle} to="/login">Iniciar sesion</NavLink>
-      </div>
-    )
+     
+        <div className="nav-bar">
+          <NavLink style={selecStyle} to="/">
+            Inicio
+          </NavLink>
+          <NavLink style={selecStyle} to="/signup">
+            Registro
+          </NavLink>
+          <NavLink style={selecStyle} to="/login">
+            Iniciar sesion
+          </NavLink>
+        </div>
+   
+    );
   }
-  
 }
 
-export default Navbar
+export default Navbar;

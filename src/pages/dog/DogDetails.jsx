@@ -49,7 +49,7 @@ function DogDetails() {
   return (
     <div className="container-details">
       <div className="cart-details">
-        <p className="title">Detalles de los perritos</p>
+        <p className="title-details">Detalles de los perritos</p>
 
         <div className="cart-text">
           <img className="image-details" src={detailsDog.image} alt="image" width={200} />

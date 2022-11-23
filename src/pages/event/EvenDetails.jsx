@@ -94,7 +94,7 @@ function EvenDetails() {
   return (
     <div className="container-events">
       <div className="cart-events">
-        <p className="title">Detalles de los eventos </p>
+        <p className="title-details">Detalles de los eventos </p>
         <div className="cart-text">
           <img
             className="image-details"

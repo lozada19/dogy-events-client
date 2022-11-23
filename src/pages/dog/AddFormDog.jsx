@@ -116,7 +116,8 @@ function AddFormDog() {
             <input type="file" onChange={handleImgUpload} />
             
           </div>
-          <img className="image-selector" src={imageUrl} alt="image" width={80} />
+          {imageUrl == null ? (<img className="image-selector" src={imageUrl} alt="image" width={80} /> ) : null }
+          
 
           <div>
             <button className="submit" onClick={handleSignup}>

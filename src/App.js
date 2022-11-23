@@ -16,6 +16,7 @@ import AddFormDog from './pages/dog/AddFormDog';
 import AddFormEvent from './pages/event/AddFormEvent';
 import Error from './pages/Error';
 import NotFound from './pages/NotFound';
+import Footer from './components/Footer';
 
 
 
@@ -46,6 +47,7 @@ function App() {
         <Route path="/error" element={<Error/>}/>
         <Route path="/*" element={<NotFound />}/>
       </Routes>
+      <Footer/>
     </div>
   );
 }
