@@ -9,6 +9,7 @@ import image7 from "../images/pngegg.png";
 import image8 from "../images/perro-al-agua.jpg";
 import image9 from "../images/perros-jugando.jpg";
 import image10 from "../images/huesitos.jpg";
+import { NavLink } from "react-router-dom";
 
 function Home() {
   return (
@@ -28,9 +29,9 @@ function Home() {
       <div className="information">
         <h1 className="title-home">Bienvenidos a Dogy Events</h1>
         <div>
-          <a href="">
-            <button className="button-home">Registrate</button>
-          </a>
+          <NavLink to="/signup">
+          <button className="button-home">Registrate</button>
+          </NavLink>
         </div>
       </div>
     </div>

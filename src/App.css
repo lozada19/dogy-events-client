@@ -23,16 +23,61 @@ body {
 }
 
 /* ------- Navbar ---------- */
-.nav-bar {
+.menu-navbar {
   background-color: white;
-  padding: 15px;
-  flex-shrink: 1;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 2px;
-  font-size: 15px;
+  display: flex;
+  justify-content: baseline;
+  justify-content: space-between;
+}
+
+.navBar {
+  position: relative;
+}
+
+.navBar button {
+  position: fixed;
+  left: 40px;
+  top: 40px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.nav-bar.showMenu {
+  width: 100%;
+}
+
+.nav-bar.navBurger {
+  display: none;
 }
 
 a {
-  margin: 20px;
+  display: block;
+  padding: 10px 40px;
+  text-decoration: none;
+ 
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.nav-bar li:first-child {
+  margin-top: 7rem;
+}
+
+.nav-bar {
+  overflow-y: scroll;
+  list-style: none;
+  position: fixed;
+  
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 0;
+  overflow: hidden;
+  max-width: 290px;
+  z-index: 9;
+  background-color: white;
+  padding-top: 10px;
+  flex-shrink: 1;
 }
 
 .logo {
@@ -41,6 +86,8 @@ a {
   font-weight: bold;
   color: #08d;
   font-size: 1.6em;
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* ------------------------ Home ------------------------ */
@@ -109,7 +156,6 @@ img {
   left: 0%;
   top: 10%;
 }
-
 
 .information {
   position: absolute;
@@ -466,111 +512,87 @@ footer p {
 /* -------------------------------------------------------------------------- @Media 850px ------------------------------------------------------------ */
 @media (min-width: 850px) {
   /* --------------- Navbar -------------------- */
-  .nav-bar {
-    background-color: white;
-    padding: 10px;
-    flex-shrink: 1;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 2px;
+ 
+
+  /* ------------------------ Home ------------------------ */
+
+  .image1 {
+    width: 30%;
+    height: 250px;
+    max-width: 300px;
+    border-radius: 8%;
+    left: 80%;
+    top: 20%;
+  }
+
+  .image2 {
+    width: 30%;
+    height: 250px;
+    max-width: 250px;
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
+    right: 0%;
+    top: 65%;
+  }
+  .image3 {
+    width: 15%;
+    height: 150px;
+    max-width: 300px;
+    border-radius: 10%;
+    right: 40%;
+    top: 70%;
+  }
+  .image4 {
+    width: 15%;
+    height: 250px;
+    max-width: 300px;
+    border-radius: 5%;
+    right: 40%;
+    top: 10%;
+  }
+  .image5 {
+    width: 30%;
+    height: 300px;
+    max-width: 300px;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    left: 0%;
+    top: 60%;
+  }
+  .image6 {
+    width: 30%;
+    max-width: 250px;
+    height: 280px;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    left: 0%;
+    top: 10%;
+  }
+
+  .information {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: space-evenly;
-    margin: 0;
+    flex-direction: column;
+    align-items: center;
   }
 
-  a {
-    margin: 20px;
+  .button-home {
+    background-color: #08d;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 15px;
+    height: 40px;
+    margin-top: 38px;
+    outline: 0;
+    text-align: center;
+    width: 100%;
   }
-
-  .logo {
-    margin: 0;
-    font-weight: bold;
-    color: #08d;
-    font-size: 1.6em;
-  }
-
-
-
-/* ------------------------ Home ------------------------ */
-
-
-.image1 {
-  width: 30%;
-  height: 250px;
-  max-width: 300px;
-  border-radius: 8%;
-  left: 80%;
-  top: 20%;
-}
-
-.image2 {
-  width: 30%;
-  height: 250px;
-  max-width: 250px;
-  border-top-left-radius: 10%;
-  border-bottom-left-radius: 10%;
-  right: 0%;
-  top: 65%;
-}
-.image3 {
-  width: 15%;
-  height: 150px;
-  max-width: 300px;
-  border-radius: 10%;
-  right: 40%;
-  top: 70%;
-}
-.image4 {
-  width: 15%;
-  height: 250px;
-  max-width: 300px;
-  border-radius: 5%;
-  right: 40%;
-  top: 10%;
-}
-.image5 {
-  width: 30%;
-  height: 300px;
-  max-width: 300px;
-  border-top-right-radius: 10%;
-  border-bottom-right-radius: 10%;
-  left: 0%;
-  top: 60%;
-}
-.image6 {
-  width: 30%;
-  max-width: 250px;
-  height: 280px;
-  border-top-right-radius: 10%;
-  border-bottom-right-radius: 10%;
-  left: 0%;
-  top: 10%;
-}
-
-.information {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.button-home {
-  background-color: #08d;
-  border-radius: 12px;
-  border: 0;
-  box-sizing: border-box;
-  color: #eee;
-  cursor: pointer;
-  font-size: 15px;
-  height: 40px;
-  margin-top: 38px;
-  outline: 0;
-  text-align: center;
-  width: 100%;
-}
 
   /* -------------------- perfil -------------------- */
   .perfil {
