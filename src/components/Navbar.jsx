@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useContext } from "react";
+import Icon from "../images/menu.png";
 
 import { AuthContext } from "../context/auth.context";
 
@@ -47,9 +48,13 @@ function Navbar() {
   if (isUserActive === true) {
     return (
       <div className="menu-navbar">
-        <button onClick={handleToggle}>{navbarOpen ? "Close" : "Open"}</button>
-
-        <ul className={`nav-bar ${navbarOpen ? " showMenu" : "navBurger"}`}>
+        <div className="navbar-logo">
+          <img className="botton-burger" onClick={handleToggle} src={Icon} />
+          <div className="logo2" />
+          <div className="logo">Dogy Events</div>
+        </div>
+        
+        <ul className={`${navbarOpen ? " showMenu" : "navBurger"}`}>
           <NavLink
             style={selecStyle}
             to="/profile"
@@ -59,7 +64,7 @@ function Navbar() {
           >
             Perfil
           </NavLink>
-
+          <hr className="solid" />
           <NavLink
             style={selecStyle}
             to="/dog"
@@ -70,7 +75,7 @@ function Navbar() {
           >
             Ver Perritos
           </NavLink>
-
+          <hr className="solid" />
           <NavLink
             style={selecStyle}
             to="/dog/add-form"
@@ -80,6 +85,7 @@ function Navbar() {
           >
             Crear perritos
           </NavLink>
+          <hr className="solid" />
           <NavLink
             style={selecStyle}
             to="/event"
@@ -90,6 +96,7 @@ function Navbar() {
           >
             Ver eventos
           </NavLink>
+          <hr className="solid" />
           <NavLink
             style={selecStyle}
             to="/event/add-form"
@@ -99,6 +106,7 @@ function Navbar() {
           >
             Crear evento
           </NavLink>
+          <hr className="solid" />
           {/* <Link onClick={handleLogout} >Perfil</Link> */}
           <button
             className="button-cerrar"
@@ -108,17 +116,21 @@ function Navbar() {
           >
             Cerrar sesion
           </button>
+          <hr className="solid" />
           {/* <p>{user.email}</p>  */}
         </ul>
-        <div className="logo">Dogy Events</div>
       </div>
     );
   } else {
     return (
       <div className="menu-navbar">
-        
-        <button onClick={handleToggle}>{navbarOpen ? "Close" : "Open"}</button>
-        <ul className={`nav-bar ${navbarOpen ? " showMenu" : "navBurger"}`}>
+        <div className="navbar-logo">
+          <img className="botton-burger" onClick={handleToggle} src={Icon} />
+          <div className="logo2" />
+          <div className="logo">Dogy Events</div>
+        </div>
+
+        <ul className={`${navbarOpen ? " showMenu" : "navBurger"}`}>
           <NavLink
             style={selecStyle}
             to="/"
@@ -128,6 +140,7 @@ function Navbar() {
           >
             Inicio
           </NavLink>
+          <hr className="solid" />
           <NavLink
             style={selecStyle}
             to="/signup"
@@ -137,6 +150,7 @@ function Navbar() {
           >
             Registro
           </NavLink>
+          <hr className="solid" />
           <NavLink
             style={selecStyle}
             to="/login"
@@ -146,8 +160,8 @@ function Navbar() {
           >
             Iniciar sesion
           </NavLink>
+          <hr className="solid" />
         </ul>
-        <div className="logo">Dogy Events</div>
       </div>
     );
   }

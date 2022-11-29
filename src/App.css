@@ -26,58 +26,50 @@ body {
 .menu-navbar {
   background-color: white;
   display: flex;
-  justify-content: baseline;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
-.navBar {
-  position: relative;
+.showMenu {
+  width: 100%;
+  list-style: none;
+  height: 100vh;
+  max-width: 290px;
+  margin: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  font-size: 15px;
+  z-index: 100;
 }
 
-.navBar button {
-  position: fixed;
-  left: 40px;
-  top: 40px;
-  z-index: 10;
-  cursor: pointer;
+.showMenu:hover {
+  background-color: none;
+  color: #08d;
 }
 
-.nav-bar.showMenu {
+.solid {
+  border: 0.5px solid black;
   width: 100%;
 }
 
-.nav-bar.navBurger {
+.navBurger {
   display: none;
 }
 
-a {
-  display: block;
-  padding: 10px 40px;
-  text-decoration: none;
- 
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.nav-bar li:first-child {
-  margin-top: 7rem;
-}
-
-.nav-bar {
-  overflow-y: scroll;
-  list-style: none;
-  position: fixed;
-  
-  left: 0;
-  bottom: 0;
-  height: 100vh;
-  width: 0;
-  overflow: hidden;
-  max-width: 290px;
-  z-index: 9;
-  background-color: white;
+.botton-burger {
+  background-color: rgba(240, 248, 255, 0);
+  border: none;
+  color: black;
+  width: 42px;
+  height: 42px;
+  padding-left: 8px;
   padding-top: 10px;
-  flex-shrink: 1;
+}
+
+.navbar-logo {
+  display: flex;
+  flex-direction: row;
 }
 
 .logo {
@@ -86,8 +78,15 @@ a {
   font-weight: bold;
   color: #08d;
   font-size: 1.6em;
+}
+
+.logo2 {
+  flex-grow: 1;
+}
+
+.button-cerrar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 /* ------------------------ Home ------------------------ */
@@ -512,7 +511,48 @@ footer p {
 /* -------------------------------------------------------------------------- @Media 850px ------------------------------------------------------------ */
 @media (min-width: 850px) {
   /* --------------- Navbar -------------------- */
- 
+  .menu-navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .showMenu {
+    height: auto;
+    width: 100%;
+  }
+
+  .showMenu:hover {
+    background-color: none;
+    color: #08d;
+  }
+
+  .solid {
+    display: none;
+  }
+
+  .navBurger {
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+  }
+
+  a {
+    padding: 15px;
+  }
+
+  .botton-burger {
+    display: none;
+  }
+
+  .button-cerrar {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 15px;
+    font-size: 18px;
+  }
 
   /* ------------------------ Home ------------------------ */
 
